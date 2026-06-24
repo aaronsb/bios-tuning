@@ -43,6 +43,25 @@ flowchart LR
   classDef ds fill:#E8A33D,stroke:#FFD180,color:#1A1A1A
 ```
 
+## The walk
+
+The answer above came from the agent walking the graph, not reading a page. Circles
+are the notes it read; arrows are its MCP moves.
+
+```mermaid
+flowchart LR
+  Q{{"ask: ODT for 2DPC"}}:::q
+  Q -->|search “impedance”| V((AmdSetupRPL)):::var
+  Q -->|neighbors| M((DDR Bus<br/>Configuration)):::menu
+  M --> P((Processor ODT<br/>Pull Up P0)):::odt
+  M --> R((RTT_PARK P0)):::odt
+  P -->|read| V
+  classDef q fill:#9575CD,stroke:#D1C4E9,color:#ffffff
+  classDef menu fill:#455A64,stroke:#90A4AE,color:#ffffff
+  classDef var fill:#26A69A,stroke:#B2DFDB,color:#ffffff
+  classDef odt fill:#E05B4F,stroke:#FF8A80,color:#ffffff
+```
+
 **Why it works.** The IFR binds every question to a form (menu) and to a
 (VarStore, offset). The generator makes both into nodes. The menu node aggregates
 everything that menu shows; the variable node aggregates everything stored together;

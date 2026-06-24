@@ -29,6 +29,25 @@ flowchart TD
   classDef var fill:#26A69A,stroke:#B2DFDB,color:#ffffff
 ```
 
+## The walk
+
+One search, several reads — the agent walking the graph found the same control in
+three modules. (MCR = Memory Context Restore.)
+
+```mermaid
+flowchart LR
+  Q{{"ask: which menu wrote it?"}}:::q
+  Q -->|search “Context Restore”| A((MCR · setup)):::p
+  Q --> B((MCR · cbs-rpl)):::p
+  Q --> C((MCR · aoddxe)):::p
+  A -->|read| AV((Setup)):::var
+  B -->|read| BV((AmdSetupRPL)):::var
+  C -->|read| CV((AodSetupRpl)):::var
+  classDef q fill:#9575CD,stroke:#D1C4E9,color:#ffffff
+  classDef p fill:#6FB1FC,stroke:#BBDEFB,color:#1A1A1A
+  classDef var fill:#26A69A,stroke:#B2DFDB,color:#ffffff
+```
+
 **Why it works.** AGESA exposes a setting through more than one form module, and
 each module is a separate formset with its own VarStore. The graph keeps the
 instances distinct because they are distinct: same name, different storage. To find

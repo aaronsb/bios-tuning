@@ -70,6 +70,19 @@ rather than reverse engineering is the open follow-up.
 > this annotation, exactly as it is in the vault — is captured at
 > [`docs/examples/HwmSetupData.md`](../examples/HwmSetupData.md).
 
+## The walk
+
+The same walking of the graph, plus a write: the agent read the node, researched, and
+wrote its findings back — all over the MCP.
+
+```mermaid
+flowchart LR
+  H((HwmSetupData)):::var -->|read| AG{{"research +<br/>synthesize"}}:::q
+  AG -->|write ## Notes via MCP| H
+  classDef var fill:#26A69A,stroke:#B2DFDB,color:#ffffff
+  classDef q fill:#66BB6A,stroke:#C8E6C9,color:#1A1A1A
+```
+
 ## Why it works
 
 The generated body and the annotation are separated by the `<!-- END GENERATED -->`

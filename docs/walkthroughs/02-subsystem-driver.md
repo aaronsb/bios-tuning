@@ -35,6 +35,22 @@ flowchart LR
   classDef fan fill:#FF7043,stroke:#FFAB91,color:#ffffff
 ```
 
+## The walk
+
+The fan model above was assembled by the agent walking the graph from one search hit
+to the shared variable.
+
+```mermaid
+flowchart LR
+  Q{{"ask: the fan model"}}:::q
+  Q -->|search “Smart Fan”| F((System Fan 6<br/>Smart Fan Control)):::fan
+  F -->|read · 0x1FF| H((HwmSetupData)):::var
+  H -->|offset map| S((System Fan 1..6)):::fan
+  classDef q fill:#9575CD,stroke:#D1C4E9,color:#ffffff
+  classDef fan fill:#FF7043,stroke:#FFAB91,color:#ffffff
+  classDef var fill:#26A69A,stroke:#B2DFDB,color:#ffffff
+```
+
 **Why it works.** Repeated hardware — six identical fan headers — produces repeated
 forms in the IFR. The shared variable node collects them into one offset map. That
 map is comparable, offset by offset, with the chip's register space.

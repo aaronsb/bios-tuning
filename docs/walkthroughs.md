@@ -37,6 +37,17 @@ flowchart LR
 Parameter nodes take their domain's colour (red for ODT, orange for thermal/fan,
 amber for timings, and so on — the same palette the Obsidian graph uses).
 
+## The walk diagrams
+
+Each walkthrough includes a small **walk diagram**: circles are the actual Obsidian
+notes the agent read, and arrows are its MCP moves — `search`, `neighbors`, `read`.
+
+These are not a product of generating the vault. The generator emits notes and the
+links between them, but it does not choose a route through them. A walk diagram is the
+trace of how the agent moved across the graph to assemble the answer to one question.
+A different question traces a different path over the same notes — the graph is the
+substrate; the walk is the reasoning.
+
 ## Hydrating, then enriching
 
 The generated note is a skeleton: name, help text, decoded options, variable, offset,
