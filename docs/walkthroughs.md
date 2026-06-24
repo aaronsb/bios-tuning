@@ -9,6 +9,8 @@ change is the reason to do it at all.
 | [1. Find the knobs behind a tuning goal](walkthroughs/01-tuning-goal.md) | meaning (search) | **tune** — set termination by hand where EXPO can't |
 | [2. Understand a subsystem the OS also drives](walkthroughs/02-subsystem-driver.md) | structure | **fix** — correct a Linux driver against the vendor firmware |
 | [3. The same setting in more than one menu](walkthroughs/03-setting-across-menus.md) | meaning, vault-wide | **reconcile** — set the variable that actually governs |
+| [4. Enrich a note with research](walkthroughs/04-enrichment.md) | traversal + research | **annotate** — durable findings written back into the vault |
+| [5. Extend the driver to match the firmware](walkthroughs/05-driver-extension.md) | applies 2 + 4 | **ground** — a driver matched to the firmware's own model |
 
 The shape is the same each time: enter through whichever grouping fits the question
 (by meaning, by menu, by variable, by domain), reach the setting, read its variable
@@ -69,3 +71,8 @@ Two examples from the walkthroughs:
 The split is deliberate. The generator owns the facts and overwrites them on every
 run; the `## Notes` section owns the understanding and is never overwritten. Over time
 the vault holds both — the firmware's declarations and the research built on them.
+
+[Walkthrough 4](walkthroughs/04-enrichment.md) is a worked, MCP-written example (with
+the [real note](examples/HwmSetupData.md) captured for reference);
+[walkthrough 5](walkthroughs/05-driver-extension.md) applies the result to extend an
+out-of-tree driver.

@@ -57,7 +57,9 @@ rom/<image>  →  ifr/*.ifr.txt  →  build/catalog.json  →  vault/
 - [What this is](docs/concept.md) — the model and the pipeline.
 - [Getting started](docs/getting-started.md) — build a vault and connect an agent.
 - [Agent traversal](docs/agent-traversal.md) — the MCP surface and how to work the graph.
-- [Walkthroughs](docs/walkthroughs.md) — three worked traversals.
+- [Walkthroughs](docs/walkthroughs.md) — worked traversals: tune, fix, reconcile.
+  - [Enrichment](docs/walkthroughs/04-enrichment.md) — write research back into a note via MCP ([real note](docs/examples/HwmSetupData.md)).
+  - [Driver extension](docs/walkthroughs/05-driver-extension.md) — use the BIOS model to extend an out-of-tree driver.
 
 A `bios-vault` Claude Code skill (`.claude/skills/bios-vault/`) runs the whole flow
 interactively: identify the board, get the BIOS, build, and start exploring.
