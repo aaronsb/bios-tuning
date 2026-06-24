@@ -1,0 +1,24 @@
+# external extractor toolchain (cloned + built by `make tools`)
+/tools-ifrextractor/
+/tools-uefitool/
+
+# BIOS images — not redistributable; drop your own into rom/
+/rom/*
+!/rom/README.md
+
+# unpacked firmware volumes
+**/*.dump/
+
+# generated intermediates
+/ifr/*
+!/ifr/README.md
+/build/*
+!/build/README.md
+
+# generated output (the "compiled" Obsidian vault)
+/vault/*
+!/vault/README.md
+
+# python
+__pycache__/
+*.pyc
